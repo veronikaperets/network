@@ -1,0 +1,53 @@
+{% extends "network/layout.html" %}
+
+{% block title %}
+    {{ profile_user.username }}'s Profile
+{% endblock %}
+
+{% block body %}
+    <h2>{{ profile_user.username }}'s Profile</h2>
+    <p>Followers: {{ profile_user.followers.count }}</p>
+    <p>Following: {{ profile_user.following.count }}</p>
+
+    {% if request.user.is_authenticated and request.user != profile_user %}
+        <form action="{% url 'toggle_follow' profile_user.username %}" method="post">
+            {% csrf_token %}
+            <button class="follow-btn {% if is_following %}unfollow{% else %}follow{% endif %}" id="follow-toggle-btn">
+                {% if is_following %}Unfollow{% else %}Follow{% endif %}
+            </button>
+            
+        </form>
+    {% endif %}
+    <hr>
+    {% for post in posts %}
+        <div class="post-container">
+            <p>{{ post.content }}</p>
+            <p class="post-timestamp">{{ post.timestamp }}</p>
+            <p>{{ post.likes }} likes</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block script %}
+<script>
+    $("#follow-toggle-btn").on("click", function(event) {
+        event.preventDefault(); // prevent form submission
+
+        $.ajax({
+            url: "{% url 'toggle_follow' profile_user.username %}",
+            method: "POST",
+            data: {
+                csrfmiddlewaretoken: "{{ csrf_token }}"
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.action == "follow") {
+                    $("#follow-toggle-btn").val("Unfollow");
+                } else if (response.action == "unfollow") {
+                    $("#follow-toggle-btn").val("Follow");
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}

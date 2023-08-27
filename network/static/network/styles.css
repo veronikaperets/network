@@ -1,0 +1,210 @@
+/* Container for the post */
+.new-post-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the text area */
+.new-post-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    resize: vertical; /* Allows the user to resize the text area vertically */
+}
+
+/* Styling the submit button */
+.new-post-container input[type="submit"] {
+    display: inline-block;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+.new-post-container input[type="submit"]:hover {
+    background-color: #0056b3; /* Darkened version of the primary color */
+}
+
+
+.pagination-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-link {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #333;
+}
+
+.current-page {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* Base style for both buttons */
+.edit-post-btn, .save-post-btn {
+    background-color: #007BFF;  /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    margin-top: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Style for the "Edit" button */
+.edit-post-btn {
+    background-color: #FFC107;  /* Bootstrap warning color */
+}
+
+/* Style for the "Save" button */
+.save-post-btn {
+    background-color: #28A745;  /* Bootstrap success color */
+}
+
+/* Hover effects for both buttons */
+.edit-post-btn:hover, .save-post-btn:hover {
+    opacity: 0.9;
+}
+
+.new-post-container {
+    padding: 15px;
+    background-color: #f8f9fa;  /* Light gray background */
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#new-post-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;  /* Light gray border */
+    border-radius: 4px;
+    margin-bottom: 10px;
+    resize: vertical;  /* Allow vertical resizing */
+}
+
+#submit-post-btn {
+    background-color: #007BFF;  /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit-post-btn:hover {
+    background-color: #0056b3;  /* Darker shade of the primary color */
+}
+
+.heart-btn {
+    display: inline-block;
+    font-size: 24px;
+    color: #aaa;  /* default gray color when not liked */
+    cursor: pointer;
+    margin-right: 5px;
+    user-select: none;  /* to prevent text selection on double click */
+}
+
+.heart-btn.liked {
+    color: red;  /* heart turns red when liked */
+}
+
+.likes-counter {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.post-container {
+    border: 1px solid #e1e1e1;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.post-container:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-header strong {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.post-content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.likes-section {
+    display: flex;
+    align-items: center;
+}
+
+.likes-section .heart-btn {
+    margin-right: 5px;
+}
+
+.post-timestamp {
+    font-size: 12px;
+    color: #888;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.follow-btn {
+    border: none;
+    border-radius: 3px;  /* smooth out the corners */
+    padding: 5px 10px;  /* smaller padding */
+    font-size: 0.9rem;  /* smaller font-size */
+    transition: background-color 0.3s;
+    outline: none;  /* to remove the default focus outline */
+    cursor: pointer;
+}
+
+.follow {
+    background-color: #007BFF;
+    color: white;
+}
+
+.follow:hover {
+    background-color: #0056b3;  
+}
+
+.unfollow {
+    background-color: #f44336;
+    color: white;
+}
+
+.unfollow:hover {
+    background-color: #da190b;  /* a shade darker for hover effect */
+}

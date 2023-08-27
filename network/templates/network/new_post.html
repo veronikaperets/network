@@ -1,0 +1,15 @@
+{% extends "network/layout.html" %}
+
+{% block title %}
+    New Post
+{% endblock %}
+
+{% block body %}
+    <div class="new-post-container">
+        <form action="{% url 'new_post' %}" method="post">
+            {% csrf_token %}
+            <textarea name="content" rows="4" cols="50" placeholder="What's on your mind?" required></textarea>
+            <input type="submit" value="Post">
+        </form>
+    </div>
+{% endblock %}
